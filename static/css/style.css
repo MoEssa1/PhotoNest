@@ -24,6 +24,10 @@ footer {
     font-size: 6vw;
 }
 
+.welcome-message {
+    text-align: center;
+}
+
 .main-content {
 display: flex;
 }
