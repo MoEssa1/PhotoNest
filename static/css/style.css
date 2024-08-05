@@ -21,7 +21,7 @@ footer {
 
 /* -------index.html */
 .welcome {
-    font-size: 6vw;
+    font-size: 3.5em;
 }
 
 .welcome-message {
@@ -38,6 +38,13 @@ border-radius: 50%;
 }
 
 .about-section {
-font-size: 2vw;
+font-size: 2em;
 text-align: center;
+}
+
+/* --------sign in/sign out */
+
+.sign-in {
+    border: #5e17eb;
+    border-radius: 20%;
 }

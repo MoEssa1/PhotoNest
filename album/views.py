@@ -10,3 +10,6 @@ from django.views.generic import TemplateView
 
 def HomePage(request):
     return render(request, 'album/index.html')
+
+def WelcomePage(request):
+    return render(request, 'album/welcome_page.html')

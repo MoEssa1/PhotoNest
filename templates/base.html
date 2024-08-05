@@ -27,8 +27,8 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
-<body class="d-flex flex-column main-bg">
-    <!-- Navigation -->
+<body class="main-bg"> 
+    <!-- Navigation d-flex flex-column  -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">P<span
@@ -71,8 +71,8 @@
     {% endblock content %}
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg fixed-bottom">
-        <p class="m-0 text-center text-white">Made by Mohammed Essa</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+        <p class="m-0 text-center">Made by Mohammed Essa</p>
+        <p class="m-0 text-center">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i>
