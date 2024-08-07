@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from .models import Tag, Photo 
 
 # Create your views here.
 # class HomePage(TemplateView):
@@ -12,4 +13,7 @@ def HomePage(request):
     return render(request, 'album/index.html')
 
 def WelcomePage(request):
-    return render(request, 'album/welcome_page.html')
+    tags = Tag.objects.all()
+    photos = Photo.objects.all()
+    context = {'tags':tags, 'photos':photos}
+    return render(request, 'album/welcome_page.html', context)

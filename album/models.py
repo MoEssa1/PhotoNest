@@ -35,4 +35,4 @@ class Photo(models.Model):
     likes = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return f'{self.caption[:20]} - {self.date.uploaded}'
+        return f'{self.caption[:20]} - {self.date_uploaded}'

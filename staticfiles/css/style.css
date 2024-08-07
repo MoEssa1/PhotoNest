@@ -1,3 +1,50 @@
-h1 {
-    color: rgb(111, 0, 255);
+* {
+    max-height: 70%;
+    max-width: 100;
+}
+
+/* -------base.html */
+nav {
+    background-color: #bcbefa;
+    border-radius: 30px;
+}
+
+.brand {
+    background-color: #5e17eb;
+    border-radius: 50%;
+    padding: 7px;
+}
+
+footer {
+    background-color: #fed305;
+}
+
+/* -------index.html */
+.welcome {
+    font-size: 3em;
+}
+
+.welcome-message {
+    text-align: center;
+}
+
+/* .main-content {
+display: flex;
+} */
+
+.photo-section {
+background-color: #5e17eb;
+border-radius: 50%;
+}
+
+.about-section {
+font-size: 1.5em;
+text-align: center;
+}
+
+/* --------sign in/sign out */
+
+.sign-in {
+    border: #5e17eb;
+    border-radius: 20%;
 }

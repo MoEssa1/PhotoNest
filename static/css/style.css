@@ -21,16 +21,16 @@ footer {
 
 /* -------index.html */
 .welcome {
-    font-size: 3.5em;
+    font-size: 3em;
 }
 
 .welcome-message {
     text-align: center;
 }
 
-.main-content {
+/* .main-content {
 display: flex;
-}
+} */
 
 .photo-section {
 background-color: #5e17eb;
@@ -38,7 +38,7 @@ border-radius: 50%;
 }
 
 .about-section {
-font-size: 2em;
+font-size: 1.5em;
 text-align: center;
 }
 
