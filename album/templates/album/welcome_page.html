@@ -8,7 +8,7 @@
             {% if request.user.is_authenticated %}
             <p>Hello {{request.user}}</p>
             {% endif %}
-            <a href="#" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
+            <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
             <div class="card">
                 <div class="card-header">
                     Tags
