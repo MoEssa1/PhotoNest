@@ -7,6 +7,7 @@ from .models import Tag, Photo, Profile
 def HomePage(request):
     return render(request, 'album/index.html')
 
+@login_required
 def WelcomePage(request):
     tags = Tag.objects.all()
     photos = Photo.objects.all()
@@ -18,6 +19,7 @@ def viewPhoto(request, id):
     photo = get_object_or_404(Photo, id=id)
     return render(request, 'album/photo.html', {'photo': photo})
 
+# This function will allow user to upload a photo to the album
 @login_required
 def addPhoto(request):
     tags = Tag.objects.all()
@@ -54,3 +56,41 @@ def addPhoto(request):
 
     context = {'tags':tags}
     return render(request, 'album/add_photo.html', context)
+
+
+# This function will allow users to update photos uploaded by themselves
+@login_required
+def updatePhoto(request, id):
+    photo = get_object_or_404(Photo, id=id, profile__user=request.user)
+
+    if request.method == 'POST':
+        data = request.POST
+        image = request.FILES.get('image')
+
+        selected_tag_ids = request.POST.getlist('tags')
+        tags_to_add = []
+
+        for tag_id in selected_tag_ids:
+            selected_tag = Tag.objects.get(id=tag_id)
+            tags_to_add.append(selected_tag)
+        
+        new_tag_name = data.get('tags_new', '')
+        if new_tag_name:
+            new_tag, created = Tag.objects.get_or_create(name=new_tag_name)
+            tags_to_add.append(new_tag)     
+
+        if image:
+            photo.image = image
+
+        photo.caption = data.get('caption', '')
+
+        if tags_to_add:
+            photo.tags.set(tags_to_add)
+
+        photo.save()
+
+        return redirect('welcome')
+
+    tags = Tag.objects.all()
+    context = {'photo': photo, 'tags': tags}
+    return render(request, 'album/update_photo.html', context)
