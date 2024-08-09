@@ -94,3 +94,16 @@ def updatePhoto(request, id):
     tags = Tag.objects.all()
     context = {'photo': photo, 'tags': tags}
     return render(request, 'album/update_photo.html', context)
+
+
+# This function will allow users to delete previously uploaded photo's
+@login_required
+def deletePhoto(request, id):
+    photo = get_object_or_404(Photo, id=id, profile__user=request.user)
+
+    if request.method == 'POST':
+        photo.delete()
+        return redirect('welcome')
+
+    context = {'photo': photo}
+    return render(request, 'album/delete_photo.html', context)
