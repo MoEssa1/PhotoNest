@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from .models import Tag, Photo, Profile 
 
 
@@ -10,8 +11,16 @@ def HomePage(request):
 @login_required
 def WelcomePage(request):
     tags = Tag.objects.all()
-    photos = Photo.objects.all()
-    context = {'tags':tags, 'photos':photos}
+    photos_list = Photo.objects.all()
+    paginator = Paginator(photos_list, 6)
+    page = request.GET.get('page')
+    try:
+        photos = paginator.page(page)
+    except PageNotAnInteger:
+        photos = paginator.page(1)
+    except EmptyPage:
+        photos = paginator.page(paginator.num_pages)
+    context = {'tags':tags, 'photos':photos, 'is_paginated': photos.has_other_pages(),'page_obj': photos}
     return render(request, 'album/welcome_page.html', context)
 
 # to view photo write function to get photo
