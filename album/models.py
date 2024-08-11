@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -12,7 +13,7 @@ class Profile(models.Model):
     x = models.URLField(max_length=200, blank=True)
     facebook = models.URLField(max_length=200, blank=True)
     instagram = models.URLField(max_length=200, blank=True)
-    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True)
+    profile_picture = CloudinaryField('image', blank=True)
 
     def __str__(self):
         return self.user.username
@@ -28,7 +29,7 @@ class Tag(models.Model):
 # Photo Model
 class Photo(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='photos/')
+    image = CloudinaryField('image')
     caption = models.TextField(blank=True)
     tags = models.ManyToManyField(Tag, blank=True)
     date_uploaded = models.DateTimeField(auto_now_add=True)
