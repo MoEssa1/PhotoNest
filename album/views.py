@@ -51,17 +51,18 @@ def addPhoto(request):
         data = request.POST
         image = request.FILES.get('image')
 
-        selected_tag_id = data.get('tags', 'none')
-        new_tag_name = data.get('tags_new', '')
-
+        selected_tag_ids = request.POST.getlist('tags')
         tags_to_add = []
 
-        if selected_tag_id != 'none':
-            selected_tag = Tag.objects.get(id=selected_tag_id)
+        for tag_id in selected_tag_ids:
+            selected_tag = Tag.objects.get(id=tag_id)
             tags_to_add.append(selected_tag)
-        elif new_tag_name != '':
+
+        new_tag_name = data.get('tags_new', '')
+        if new_tag_name:
             new_tag, created = Tag.objects.get_or_create(name=new_tag_name)
             tags_to_add.append(new_tag)
+
 
         # Get the profile of the logged-in user
         profile = get_object_or_404(Profile, user=request.user)
@@ -74,7 +75,7 @@ def addPhoto(request):
             )
 
             if tags_to_add:
-                photo.tags.set(tags_to_add)  # Add tags to the photo
+                photo.tags.set(tags_to_add)
 
         return redirect('welcome')
 
