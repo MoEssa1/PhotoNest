@@ -9,9 +9,17 @@ def HomePage(request):
     return render(request, 'album/index.html')
 
 @login_required
-def WelcomePage(request):
+def WelcomePage(request, tag_name=None):
     tags = Tag.objects.all()
-    photos_list = Photo.objects.all()
+    photos_list = None
+
+    if tag_name:
+        tag_name = tag_name.lower()
+        selected_tag = get_object_or_404(Tag, name__iexact=tag_name)
+        photos_list = Photo.objects.filter(tags=selected_tag).order_by('-date_uploaded')
+    else:
+        photos_list = Photo.objects.all().order_by('-date_uploaded')
+    
     paginator = Paginator(photos_list, 6)
     page = request.GET.get('page')
     try:
@@ -20,7 +28,14 @@ def WelcomePage(request):
         photos = paginator.page(1)
     except EmptyPage:
         photos = paginator.page(paginator.num_pages)
-    context = {'tags':tags, 'photos':photos, 'is_paginated': photos.has_other_pages(),'page_obj': photos}
+    
+    context = {
+        'tags':tags, 
+        'photos':photos, 
+        'is_paginated': photos.has_other_pages(),
+        'page_obj': photos,
+        'selected_tag': selected_tag if tag_name else None 
+        }
     return render(request, 'album/welcome_page.html', context)
 
 # to view photo write function to get photo

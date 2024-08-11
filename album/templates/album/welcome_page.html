@@ -9,26 +9,19 @@
             <p>Hello {{request.user}}</p>
             {% endif %}
             <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
-            <div class="card">
-                <div class="card-header">
-                    Tags
-                </div>
-                <ul class="list-group flex-fill">
-                    <li class="list-group-item col-12">
-                        <a href="#">All</a>
-                    </li>
-                    {% for tag in tags %}
-                    <li class=" list-group-item">
-                        <a href="#">
-                            {{ tag.name }}
-                        </a>
-                    </li>
-                    {% endfor %}
-
-                </ul>
-
-            </div>
+            <div class="mt-2">
+                <strong>Tags</strong>
+                <a href="{% url 'welcome' %}" class="btn btn-dark btn-block btn-sm m-1 {% if not selected_tag %}active{% endif %}">All</a>
+            </div>        
+            {% for tag in tags %}
+                    
+                <a class='btn btn-dark btn-sm m-1 {% if selected_tag and tag.name == selected_tag.name %}active{% endif %}' href="{% url 'photos_by_tag' tag.name %}">
+                    {{ tag.name }}
+                </a>
+                    
+            {% endfor %}           
         </div>
+        
         <div class="col-md-9">
             <div class="row">
                 {% if photos %}
