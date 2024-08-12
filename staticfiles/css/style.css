@@ -3,10 +3,33 @@
     max-width: 100;
 }
 
+
+/* -------Font */
+.fjalla-one-regular {
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+  .permanent-marker-regular {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  p {
+    margin: 0;
+  }
+
+
 /* -------base.html */
 nav {
     background-color: #bcbefa;
     border-radius: 30px;
+    position: fixed;
+    z-index: 1030;
+    top: 0;
 }
 
 .brand {
@@ -20,16 +43,28 @@ body {
     background-repeat:no-repeat;
     background-position: center;
     background-size: cover;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding-top: 70px;
 }
 
 
 footer {
     background-color: #fed305;
+    border-radius: 30px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1030;
 }
 
 /* -------index.html */
 .welcome {
-    font-size: 3em;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5em;
+    padding-top: 10px;
 }
 
 .welcome-message {
@@ -39,7 +74,8 @@ footer {
 
 .photo-section img {
     width: 100%;
-    max-width: 500px;
+    min-width: auto;
+    max-width: 400px;
     height: auto;
     border-radius: 50%;
     object-fit: cover;
@@ -48,16 +84,21 @@ footer {
 }
 
 .about-section {
-font-size: 1.5em;
-text-align: center;
+    font-family: 'Fjalla One', sans serif;
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+
+.prompt-message p {
+    font-family: 'Permanent Marker', cursive;
+    padding-top: 5px;
 }
 
 /* --------sign in/sign out */
 
-.sign-in {
-    border: #5e17eb;
-    border-radius: 20%;
-}
+
 
 /* ----------welcome page */
 .card-container{
@@ -65,8 +106,21 @@ height: 250px;
 }
 
 .image-preview {
-    height: 200px;
+    min-height: 150px;
+    max-height: 200px;
     object-fit: cover;
+}
+
+
+.greeting {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+}
+
+
+.caption {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
 }
 
 /* -----------image.html */
@@ -76,6 +130,8 @@ height: 250px;
 }
 
 .photo-container img{
-    max-width: 100%; 
-    max-height: 100%;
+    max-width: 700px; 
+    max-height: 400px;
 }
+
+
