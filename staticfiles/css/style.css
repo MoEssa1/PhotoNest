@@ -1,5 +1,5 @@
 * {
-    max-height: 70%;
+    max-height: 100%;
     max-width: 100;
 }
 
@@ -15,6 +15,14 @@ nav {
     padding: 7px;
 }
 
+body {
+    background-image: url('/static/images/photos/background.jpg');
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
 footer {
     background-color: #fed305;
 }
@@ -28,13 +36,15 @@ footer {
     text-align: center;
 }
 
-/* .main-content {
-display: flex;
-} */
 
-.photo-section {
-background-color: #5e17eb;
-border-radius: 50%;
+.photo-section img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #5e17eb; 
+    padding: 10px; 
 }
 
 .about-section {
