@@ -4,15 +4,15 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 text-center mb-3">
+        <div class="col-12 text-center mb-1">
             <h2 class="welcome">Welcome to PhotoNest</h2>
         </div>
     </div>
-    <div class="row justify-content-evenly mb-5">
-        <div class="col-sm-12 col-md-4 col-lg-4 photo-section">
-            <img src="static/images/photos/mainphoto1.jpg" alt="A welcoming image" class="photo">
+    <div class="row mb-2">
+        <div class="d-flex justify-content-center col-sm-12 col-md-12 col-lg-12 photo-section">
+            <img src="static/images/photos/mainphoto1.jpg" alt="A welcoming image" class="photo justify-content-center">
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 about-section">
+        <div class="d-flex col-sm-12 col-md-12 col-lg-6 offset-lg-3  p-0 about-section">
             <p>
                 PhotoNest is an intuitive web application designed to provide a seamless experience for families to
                 create, manage, and share their precious memories. Users can easily create profiles, upload photos, add
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-12">
+        <div class="col-12 prompt-message">
             <p>Login or sign up to share your photo's</p>
         </div>
     </div>

@@ -8,9 +8,9 @@
             <a href="{% url 'welcome' %}" class="btn btn-dark my-3">Go Back</a>
 
             <div class="photo-container">
-                <img style="max-width: 100%; max-height: 80%;" src="{{photo.image.url}}">
+                <img class="image" src="{{photo.image.url}}">
 
-                <p>{{photo.caption}}</p>
+                <p class="caption">{{photo.caption}}</p>
 
                 {% if request.user == photo.profile.user %}
                 <a href="{% url 'update' photo.id %}" class="btn btn-warning my-3">Edit Photo</a>

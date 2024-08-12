@@ -2,11 +2,11 @@
 
 
 {% block content %}
-<div class="container">
+<div class="container py-5">
     <div class="row">
         <div class="col-md-3">
             {% if request.user.is_authenticated %}
-            <p>Hello {{request.user}}</p>
+            <p class="greeting">Hello {{request.user}}</p>
             {% endif %}
             <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
             <div class="mt-2">
@@ -22,15 +22,15 @@
             {% endfor %}           
         </div>
         
-        <div class="col-md-9">
+        <div class="col-md-9 py-5">
             <div class="row">
                 {% if photos %}
                 {% for photo in photos %}
-                <div class="col-sm-9 col-md-6 col-lg-4">
+                <div class="col-6 col-sm-4 col-md-6 col-lg-4">
                     <div class="card card-container my-2">
                         <img class="image-preview" src="{{photo.image.url}}" alt="Card image cap">
 
-                        <div class="card-body">
+                        <div class="card-body caption p-0">
                             <small>{{ photo.caption }}</small>
                         </div>
                         <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">View</a>
@@ -44,7 +44,7 @@
             </div>    
         </div>
     </div>
-    <div class="row">
+    <div class="row pb-2">
         {% if is_paginated %}
         <div aria-label="Page navigation" class="text-center">
             {% if page_obj.has_previous %}
