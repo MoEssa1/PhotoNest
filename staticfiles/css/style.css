@@ -38,12 +38,17 @@ nav {
     padding: 7px;
 }
 
+.navbar-text {
+    font-family: 'Permanent Marker', cursive;
+}
+
 body {
     background-image: url('/static/images/photos/background.jpg');
     background-repeat:no-repeat;
     background-position: center;
     background-size: cover;
     min-height: 100vh;
+    overflow-y: auto;
 }
 
 main {
@@ -123,15 +128,16 @@ height: 250px;
     font-size: 20px;
 }
 
+
+
+.img-thumbnail {
+    max-width: 350px;
+    max-height: 200px;
+}
+
 /* -----------image.html */
 
 .photo-container {
     height: 80vh;
 }
-
-.photo-container img{
-    max-width: 700px; 
-    max-height: 400px;
-}
-
 

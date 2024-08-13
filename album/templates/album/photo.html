@@ -8,7 +8,7 @@
             <a href="{% url 'welcome' %}" class="btn btn-dark my-3">Go Back</a>
 
             <div class="photo-container">
-                <img class="image" src="{{photo.image.url}}">
+                <img class="image" style="max-width: 700px; max-height:400px;" src="{{photo.image.url}}">
 
                 <p class="caption">{{photo.caption}}</p>
 
