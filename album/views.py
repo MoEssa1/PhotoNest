@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from .models import Tag, Photo, Profile 
 
@@ -77,6 +78,8 @@ def addPhoto(request):
             if tags_to_add:
                 photo.tags.set(tags_to_add)
 
+            messages.success(request, 'Photo uploaded succesfully!')
+
         return redirect('welcome')
 
     context = {'tags':tags}
@@ -114,6 +117,8 @@ def updatePhoto(request, id):
 
         photo.save()
 
+        messages.success(request, 'Photo updated succesfully!')
+
         return redirect('welcome')
 
     tags = Tag.objects.all()
@@ -128,6 +133,8 @@ def deletePhoto(request, id):
 
     if request.method == 'POST':
         photo.delete()
+
+        messages.success(request, 'Photo deleted succesfully!')
         return redirect('welcome')
 
     context = {'photo': photo}

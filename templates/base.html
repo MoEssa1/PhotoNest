@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Permanent+Marker&display=swap" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/photos/favicon.ico' %}">
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -72,7 +74,7 @@
     </nav>
 
     <!-- Alert Message -->
-    <div class="container pt-5">
+    <div class="container mt-3 pt-5">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
@@ -94,17 +96,23 @@
   
     <!-- Footer -->
     <footer class="footer mt-auto py-2 dark-bg fixed-bottom">
-        <p class="m-0 text-center">Made by Mohammed Essa</p>
-        <p class="m-0 text-center">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i>
+        <p class="m-0 text-center">Made by Mohammed Essa
+            <a class="icon" href="https://www.linkedin.com/in/mohammed-essa-05745b256/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin ms-3"></i></a>
+            <a class="icon" href="https://github.com/MoEssa1/PhotoNest" target="_blank" rel="noopener noreferrer"><i class="fab fa-github ms-3"></i></a>
+        </p>
+
+        <p class="m-0 text-center">Follow us: 
+            <a class="icon" href="http://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square ms-3"></i></a>
+            <a class="icon" href="http://www.x.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-x-twitter ms-3"></i></a>
+            <a class="icon" href="http://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram-square ms-3"></i></a>
+            <a class="icon" href="http://www.youtube.com"><i class="fab fa-youtube-square ms-3"></i></a>
         </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-        </script>
+    </script>
+    <script src="https://kit.fontawesome.com/7272ffe105.js" crossorigin="anonymous"></script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 
