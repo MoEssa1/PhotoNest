@@ -3,12 +3,12 @@
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col">
+        <div class="col pb-3">
 
             <a href="{% url 'welcome' %}" class="btn btn-dark my-3">Go Back</a>
 
-            <div class="photo-container">
-                <img class="image" style="max-width: 700px; max-height:400px;" src="{{photo.image.url}}">
+            <div class="photo-container pb-5">
+                <img class="image" style="max-width: 90vw; max-height:400px;" src="{{photo.image.url}}">
 
                 <p class="caption">{{photo.caption}}</p>
 
