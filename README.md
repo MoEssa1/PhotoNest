@@ -235,6 +235,15 @@ The W3C CSS Validator also Passed.
 
 ![Screenshot 2024-08-14 at 02 05 37](https://github.com/user-attachments/assets/38685757-de7c-4ff9-8f50-1229a27a0e80)
 
+### Python Testing:
+
+I utilised a Python validator to ensure my application adheres to the PEP8 standard. During the validation process, I identified and corrected a few minor issues related to whitespace. After making these adjustments, the validator successfully passed my code, confirming that it now fully complies with the PEP8 guidelines.
+
+<img width="800" alt="Screenshot 2024-08-14 at 11 51 52" src="https://github.com/user-attachments/assets/3223b480-0134-4b25-b186-f0f123b313fd">
+<img width="800" alt="Screenshot 2024-08-14 at 11 30 39" src="https://github.com/user-attachments/assets/d44ee6c4-56cb-4349-abdf-9e5180adb613">
+
+
+
 ## Responsiveness:
 
 The application has been thoroughly tested for responsiveness across various browsers to ensure a seamless user experience on different devices. This testing included Google Chrome on both desktop and mobile, Firefox, and Safari on mobile. The design and functionality were consistently maintained, ensuring that users can easily navigate and interact with the application regardless of their browser or device.
