@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
+
 # Profile Model
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -25,6 +26,7 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
 
 # Photo Model
 class Photo(models.Model):

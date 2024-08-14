@@ -2,12 +2,12 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from .models import Tag, Photo, Profile 
-
+from .models import Tag, Photo, Profile
 
 
 def HomePage(request):
     return render(request, 'album/index.html')
+
 
 @login_required
 def WelcomePage(request, tag_name=None):
@@ -20,7 +20,7 @@ def WelcomePage(request, tag_name=None):
         photos_list = Photo.objects.filter(tags=selected_tag).order_by('-date_uploaded')
     else:
         photos_list = Photo.objects.all().order_by('-date_uploaded')
-    
+
     paginator = Paginator(photos_list, 6)
     page = request.GET.get('page')
     try:
@@ -29,20 +29,22 @@ def WelcomePage(request, tag_name=None):
         photos = paginator.page(1)
     except EmptyPage:
         photos = paginator.page(paginator.num_pages)
-    
+
     context = {
-        'tags':tags, 
-        'photos':photos, 
+        'tags': tags,
+        'photos': photos,
         'is_paginated': photos.has_other_pages(),
         'page_obj': photos,
-        'selected_tag': selected_tag if tag_name else None 
+        'selected_tag': selected_tag if tag_name else None
         }
     return render(request, 'album/welcome_page.html', context)
+
 
 # to view photo write function to get photo
 def viewPhoto(request, id):
     photo = get_object_or_404(Photo, id=id)
     return render(request, 'album/photo.html', {'photo': photo})
+
 
 # This function will allow user to upload a photo to the album
 @login_required
@@ -64,7 +66,6 @@ def addPhoto(request):
             new_tag, created = Tag.objects.get_or_create(name=new_tag_name)
             tags_to_add.append(new_tag)
 
-
         # Get the profile of the logged-in user
         profile = get_object_or_404(Profile, user=request.user)
 
@@ -82,7 +83,7 @@ def addPhoto(request):
 
         return redirect('welcome')
 
-    context = {'tags':tags}
+    context = {'tags': tags}
     return render(request, 'album/add_photo.html', context)
 
 
@@ -101,11 +102,11 @@ def updatePhoto(request, id):
         for tag_id in selected_tag_ids:
             selected_tag = Tag.objects.get(id=tag_id)
             tags_to_add.append(selected_tag)
-        
+
         new_tag_name = data.get('tags_new', '')
         if new_tag_name:
             new_tag, created = Tag.objects.get_or_create(name=new_tag_name)
-            tags_to_add.append(new_tag)     
+            tags_to_add.append(new_tag)
 
         if image:
             photo.image = image

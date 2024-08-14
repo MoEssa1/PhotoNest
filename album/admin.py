@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Tag, Photo 
+from .models import Profile, Tag, Photo
 
 
 # Register your models here.

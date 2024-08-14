@@ -7,4 +7,4 @@ class AlbumConfig(AppConfig):
 
     # this will ensure the signals.py file gets imported
     def ready(self):
-        import album.signals 
+        import album.signals
