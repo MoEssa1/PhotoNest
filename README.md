@@ -242,6 +242,26 @@ I utilised a Python validator to ensure my application adheres to the PEP8 stand
 <img width="800" alt="Screenshot 2024-08-14 at 11 51 52" src="https://github.com/user-attachments/assets/3223b480-0134-4b25-b186-f0f123b313fd">
 <img width="800" alt="Screenshot 2024-08-14 at 11 30 39" src="https://github.com/user-attachments/assets/d44ee6c4-56cb-4349-abdf-9e5180adb613">
 
+### Manual Testing:
+
+I conducted manual testing on my site to ensure that all pages and links are functioning correctly and that alert messages appear as expected. I verified that unauthorized users cannot access the gallery, and that photos can only be edited or deleted by the user who uploaded them. This testing confirms that the site behaves as intended and maintains proper access controls.
+
+![image](https://github.com/user-attachments/assets/14ea82f3-ac5a-4661-b009-7db19361942e)
+![image](https://github.com/user-attachments/assets/b3b5a6bf-5bc1-4c09-89b2-7f59d9e463f6)
+<img width="834" alt="Screenshot 2024-08-13 at 23 09 22" src="https://github.com/user-attachments/assets/3a4ab3b5-594b-4ee8-a17c-dabdc059fe26">
+
+Tags being used to filter through photos
+<img width="851" alt="Screenshot 2024-08-14 at 12 34 31" src="https://github.com/user-attachments/assets/ac57f036-e16a-4089-8972-f1446e98cdc4">
+
+Pagination
+<img width="196" alt="Screenshot 2024-08-14 at 12 34 03" src="https://github.com/user-attachments/assets/9777633d-03a3-4a56-a8b7-6f94b21f6c88">
+
+Only view mode due to it being uploaded by someone else
+<img width="473" alt="Screenshot 2024-08-14 at 12 36 39" src="https://github.com/user-attachments/assets/7b75d951-2be1-40ad-b7a2-27527ab045cd">
+
+
+Delete conformation
+<img width="691" alt="Screenshot 2024-08-14 at 12 37 23" src="https://github.com/user-attachments/assets/6af7c804-c5c1-40f6-b73b-a6b9be58932b">
 
 
 ## Responsiveness:
