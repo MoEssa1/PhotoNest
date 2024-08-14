@@ -113,14 +113,12 @@ footer {
     padding-top: 5px;
 }
 
-/* --------sign in/sign out */
-
-
 
 /* ----------welcome page */
 .card-container{
 height: 250px;
 }
+
 
 .image-preview {
     min-height: 150px;
@@ -148,7 +146,7 @@ height: 250px;
     object-fit: fill;
 }
 
-/* -----------image.html */
+
 
 
 
